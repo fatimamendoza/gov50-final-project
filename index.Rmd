@@ -11,9 +11,12 @@ output:
 
 ## Project thoughts
 
-For my final project, I am interested in exploring data from the 2020 presidential election, specifically from the state of Illinois. More specifically, I'd like to see the relationship between average salaries for counties and which candidate individuals in those counties voted for. 
+For my final project, I am interested in exploring data regarding high school education and poverty rates in the city of Chicago. More specifically, I'd like to see the relationship between percentage of persons over the age of 25 without a high school diploma and the percent of households living below federal poverty level.
 
 
 
+## Proposal 
 
-
+https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012  
+The data set I plan on using is "Census Data - Selected socioeconomic indicators in Chicago, 2008 – 2012" from data.gov
+	What is the impact of the percentage of persons over the age of 25 without a high school diploma on the percent of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people over the age of 25 without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people over 25 years of age without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons over the age of 25 without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals over the age of 25 do not have a high school diploma. The outcome variable of interest is the percent of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons over the age of 25 without a high school diploma and percent of households living below federal poverty level, meaning that as percentage of persons over the age of 25 without a high school diploma increases, so does percent of households living below federal poverty level. A correlation between the two variables would disprove my hypothesis. 
