@@ -1,7 +1,7 @@
 ---
-title: "Salaries and Voting Patterns in Illinois"
+title: "High School Degrees and Poverty in Chicago"
 author: "Fatima Mendoza"
-description: "Salaries and Presidential Election Voting Patterns in Illinois"
+description: "Relationship between the percentage of individuals aged 25 and over without a high school diploma and the percentage of households living below the poverty level in Chicago neighborhoods"
 output:
   distill::distill_article:
     self_contained: false
