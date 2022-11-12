@@ -42,6 +42,7 @@ ggplot(mapping = aes(x = degrees, y = poverty)) +
   x = "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA" ,
   y = "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"
   ) 
+
 plot
 ```
 
