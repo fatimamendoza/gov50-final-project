@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Censusdata.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1523,6 +1523,438 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><a href="https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012" class="uri">https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012</a><br />
 The data set I plan on using is “Census Data - Selected socioeconomic indicators in Chicago, 2008 – 2012” from data.gov
 What is the impact of the percentage of persons over the age of 25 without a high school diploma on the percent of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people over the age of 25 without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people over 25 years of age without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons over the age of 25 without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals over the age of 25 do not have a high school diploma. The outcome variable of interest is the percent of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons over the age of 25 without a high school diploma and percent of households living below federal poverty level, meaning that as percentage of persons over the age of 25 without a high school diploma increases, so does percent of households living below federal poverty level. On the other hand, a negative correlation between the two variables would disprove my hypothesis.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='va'>indicators</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Censusdata.csv"</span>, show_col_types <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span></span>
+<span></span>
+<span></span>
+<span><span class='va'>relation</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='va'>indicators</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`COMMUNITY AREA NAME`</span>, <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span>, <span class='va'>`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`</span><span class='op'>)</span></span>
+<span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>relation</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"COMMUNITY AREA NAME"</span>, <span class='st'>"PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"</span>, <span class='st'>"PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
+</div>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 36%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">COMMUNITY AREA NAME</th>
+<th style="text-align: right;">PERCENT HOUSEHOLDS BELOW POVERTY LEVEL</th>
+<th style="text-align: right;">PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rogers Park</td>
+<td style="text-align: right;">23.6</td>
+<td style="text-align: right;">18.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">West Ridge</td>
+<td style="text-align: right;">17.2</td>
+<td style="text-align: right;">20.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Uptown</td>
+<td style="text-align: right;">24.0</td>
+<td style="text-align: right;">11.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lincoln Square</td>
+<td style="text-align: right;">10.9</td>
+<td style="text-align: right;">13.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">North Center</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">4.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lake View</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: right;">2.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lincoln Park</td>
+<td style="text-align: right;">12.3</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Near North Side</td>
+<td style="text-align: right;">12.9</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edison Park</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">7.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Norwood Park</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">11.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jefferson Park</td>
+<td style="text-align: right;">8.6</td>
+<td style="text-align: right;">13.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Forest Glen</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">4.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">North Park</td>
+<td style="text-align: right;">13.2</td>
+<td style="text-align: right;">14.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albany Park</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">32.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Portage Park</td>
+<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">19.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Irving Park</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">22.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dunning</td>
+<td style="text-align: right;">10.6</td>
+<td style="text-align: right;">16.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Montclaire</td>
+<td style="text-align: right;">15.3</td>
+<td style="text-align: right;">23.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Belmont Cragin</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">37.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hermosa</td>
+<td style="text-align: right;">20.5</td>
+<td style="text-align: right;">41.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Avondale</td>
+<td style="text-align: right;">15.3</td>
+<td style="text-align: right;">24.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Logan Square</td>
+<td style="text-align: right;">16.8</td>
+<td style="text-align: right;">14.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Humboldt park</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">35.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">West Town</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">12.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Austin</td>
+<td style="text-align: right;">28.6</td>
+<td style="text-align: right;">24.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">West Garfield Park</td>
+<td style="text-align: right;">41.7</td>
+<td style="text-align: right;">24.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">East Garfield Park</td>
+<td style="text-align: right;">42.4</td>
+<td style="text-align: right;">21.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Near West Side</td>
+<td style="text-align: right;">20.6</td>
+<td style="text-align: right;">9.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">North Lawndale</td>
+<td style="text-align: right;">43.1</td>
+<td style="text-align: right;">27.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Lawndale</td>
+<td style="text-align: right;">30.7</td>
+<td style="text-align: right;">54.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lower West Side</td>
+<td style="text-align: right;">25.8</td>
+<td style="text-align: right;">40.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loop</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">3.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Near South Side</td>
+<td style="text-align: right;">13.8</td>
+<td style="text-align: right;">7.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Armour Square</td>
+<td style="text-align: right;">40.1</td>
+<td style="text-align: right;">34.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Douglas</td>
+<td style="text-align: right;">29.6</td>
+<td style="text-align: right;">14.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oakland</td>
+<td style="text-align: right;">39.7</td>
+<td style="text-align: right;">18.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fuller Park</td>
+<td style="text-align: right;">51.2</td>
+<td style="text-align: right;">26.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grand Boulevard</td>
+<td style="text-align: right;">29.3</td>
+<td style="text-align: right;">15.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kenwood</td>
+<td style="text-align: right;">21.7</td>
+<td style="text-align: right;">11.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Washington Park</td>
+<td style="text-align: right;">42.1</td>
+<td style="text-align: right;">25.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hyde Park</td>
+<td style="text-align: right;">18.4</td>
+<td style="text-align: right;">4.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Woodlawn</td>
+<td style="text-align: right;">30.7</td>
+<td style="text-align: right;">16.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">South Shore</td>
+<td style="text-align: right;">31.1</td>
+<td style="text-align: right;">14.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chatham</td>
+<td style="text-align: right;">27.8</td>
+<td style="text-align: right;">14.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Avalon Park</td>
+<td style="text-align: right;">17.2</td>
+<td style="text-align: right;">10.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Chicago</td>
+<td style="text-align: right;">29.8</td>
+<td style="text-align: right;">26.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Burnside</td>
+<td style="text-align: right;">33.0</td>
+<td style="text-align: right;">19.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Calumet Heights</td>
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">11.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Roseland</td>
+<td style="text-align: right;">19.8</td>
+<td style="text-align: right;">16.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pullman</td>
+<td style="text-align: right;">21.6</td>
+<td style="text-align: right;">13.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">South Deering</td>
+<td style="text-align: right;">29.2</td>
+<td style="text-align: right;">21.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">East Side</td>
+<td style="text-align: right;">19.2</td>
+<td style="text-align: right;">31.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">West Pullman</td>
+<td style="text-align: right;">25.9</td>
+<td style="text-align: right;">20.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Riverdale</td>
+<td style="text-align: right;">56.5</td>
+<td style="text-align: right;">27.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hegewisch</td>
+<td style="text-align: right;">17.1</td>
+<td style="text-align: right;">19.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Garfield Ridge</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">19.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Archer Heights</td>
+<td style="text-align: right;">14.1</td>
+<td style="text-align: right;">35.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brighton Park</td>
+<td style="text-align: right;">23.6</td>
+<td style="text-align: right;">45.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">McKinley Park</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">32.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bridgeport</td>
+<td style="text-align: right;">18.9</td>
+<td style="text-align: right;">22.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New City</td>
+<td style="text-align: right;">29.0</td>
+<td style="text-align: right;">41.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">West Elsdon</td>
+<td style="text-align: right;">15.6</td>
+<td style="text-align: right;">37.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gage Park</td>
+<td style="text-align: right;">23.4</td>
+<td style="text-align: right;">51.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clearing</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">18.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">West Lawn</td>
+<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">33.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chicago Lawn</td>
+<td style="text-align: right;">27.9</td>
+<td style="text-align: right;">31.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">West Englewood</td>
+<td style="text-align: right;">34.4</td>
+<td style="text-align: right;">26.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Englewood</td>
+<td style="text-align: right;">46.6</td>
+<td style="text-align: right;">28.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Greater Grand Crossing</td>
+<td style="text-align: right;">29.6</td>
+<td style="text-align: right;">16.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ashburn</td>
+<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">17.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Auburn Gresham</td>
+<td style="text-align: right;">27.6</td>
+<td style="text-align: right;">18.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beverly</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Washington Height</td>
+<td style="text-align: right;">16.9</td>
+<td style="text-align: right;">13.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mount Greenwood</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">4.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Morgan Park</td>
+<td style="text-align: right;">13.2</td>
+<td style="text-align: right;">10.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">O’Hare</td>
+<td style="text-align: right;">15.4</td>
+<td style="text-align: right;">10.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edgewater</td>
+<td style="text-align: right;">18.2</td>
+<td style="text-align: right;">9.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CHICAGO</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">19.5</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>relation</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>degrees <span class='op'>=</span> <span class='va'>`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`</span>, </span>
+<span>         poverty <span class='op'>=</span> <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>degrees</span>, y <span class='op'>=</span> <span class='va'>poverty</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>  x <span class='op'>=</span> <span class='st'>"PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"</span> ,</span>
+<span>  y <span class='op'>=</span> <span class='st'>"PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"</span></span>
+<span>  <span class='op'>)</span> </span>
+<span><span class='va'>plot</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

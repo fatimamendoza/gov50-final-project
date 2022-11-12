@@ -25,7 +25,24 @@ The data set I plan on using is "Census Data - Selected socioeconomic indicators
 ```{r}
 library(tidyverse)
 indicators <- read_csv("Censusdata.csv", show_col_types = F)
-indicators
+
+
+relation <- as_tibble(indicators) |>
+  select(`COMMUNITY AREA NAME`, `PERCENT HOUSEHOLDS BELOW POVERTY`, `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`)
+  knitr::kable(relation, col.names = c("COMMUNITY AREA NAME", "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL", "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"), digits = 3)
+
+relation <- relation |>
+  mutate(degrees = `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`, 
+         poverty = `PERCENT HOUSEHOLDS BELOW POVERTY`)
+
+plot <- relation |>
+ggplot(mapping = aes(x = degrees, y = poverty)) +
+  geom_point(aes()) +
+  labs(
+  x = "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA" ,
+  y = "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"
+  ) 
+plot
 ```
 
 	
