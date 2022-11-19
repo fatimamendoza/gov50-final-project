@@ -37,7 +37,9 @@ relation <- relation |>
 
 plot <- relation |>
 ggplot(mapping = aes(x = degrees, y = poverty)) +
-  geom_point(aes()) +
+  geom_point() +
+  geom_smooth() +
+  scale_alpha() +
   labs(
   x = "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA" ,
   y = "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"
@@ -47,3 +49,4 @@ plot
 ```
 
 	
+There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below federal poverty level.
