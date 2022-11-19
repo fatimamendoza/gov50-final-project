@@ -1946,7 +1946,9 @@ What is the impact of the percentage of persons over the age of 25 without a hig
 <span></span>
 <span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
 <span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>degrees</span>, y <span class='op'>=</span> <span class='va'>poverty</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_alpha.html'>scale_alpha</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
 <span>  x <span class='op'>=</span> <span class='st'>"PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"</span> ,</span>
 <span>  y <span class='op'>=</span> <span class='st'>"PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"</span></span>
@@ -1956,6 +1958,7 @@ What is the impact of the percentage of persons over the age of 25 without a hig
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
+<p>There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below the federal poverty level.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

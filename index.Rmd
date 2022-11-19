@@ -49,4 +49,4 @@ plot
 ```
 
 	
-There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below federal poverty level.
+There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below the federal poverty level.
