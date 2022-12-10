@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Censusdata.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Censusdata.csv","FinalProject_files/anchor-4.2.2/anchor.min.js","FinalProject_files/bowser-1.9.3/bowser.min.js","FinalProject_files/distill-2.2.21/template.v2.js","FinalProject_files/figure-html5/unnamed-chunk-1-1.png","FinalProject_files/figure-html5/unnamed-chunk-2-1.png","FinalProject_files/figure-html5/unnamed-chunk-3-1.png","FinalProject_files/header-attrs-2.16/header-attrs.js","FinalProject_files/jquery-3.6.0/jquery-3.6.0.js","FinalProject_files/jquery-3.6.0/jquery-3.6.0.min.js","FinalProject_files/jquery-3.6.0/jquery-3.6.0.min.map","FinalProject_files/kePrint-0.0.1/kePrint.js","FinalProject_files/lightable-0.0.1/lightable.css","FinalProject_files/popper-2.6.0/popper.min.js","FinalProject_files/tippy-6.2.7/tippy-bundle.umd.min.js","FinalProject_files/tippy-6.2.7/tippy-light-border.css","FinalProject_files/tippy-6.2.7/tippy.css","FinalProject_files/tippy-6.2.7/tippy.umd.min.js","FinalProject_files/webcomponents-2.0.0/webcomponents.js","FinalProject.html","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-1-1.png","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.16/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1518,448 +1520,225 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <h2 id="project-thoughts">Project thoughts</h2>
-<p>For my final project, I am interested in exploring data regarding high school education and poverty rates in the city of Chicago. More specifically, I’d like to see the relationship between percentage of persons over the age of 25 without a high school diploma and the percent of households living below federal poverty level.</p>
+<p>For my final project, I am interested in exploring data regarding high school education and poverty rates in the city of Chicago. More specifically, I’d like to see the relationship between percentage of persons over the age of 25 without a high school diploma and the percentage of households living below federal poverty level.</p>
 <h2 id="proposal">Proposal</h2>
 <p><a href="https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012" class="uri">https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012</a><br />
 The data set I plan on using is “Census Data - Selected socioeconomic indicators in Chicago, 2008 – 2012” from data.gov
-What is the impact of the percentage of persons over the age of 25 without a high school diploma on the percent of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people over the age of 25 without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people over 25 years of age without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons over the age of 25 without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals over the age of 25 do not have a high school diploma. The outcome variable of interest is the percent of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons over the age of 25 without a high school diploma and percent of households living below federal poverty level, meaning that as percentage of persons over the age of 25 without a high school diploma increases, so does percent of households living below federal poverty level. On the other hand, a negative correlation between the two variables would disprove my hypothesis.</p>
+What is the impact of the percentage of persons ages 25+ without a high school diploma on the percentage of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people aged 25+ without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people aged 25+ without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons aged 25+ without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals aged 25+ do not have a high school diploma. The outcome variable of interest is the percentage of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons aged 25+ without a high school diploma and percentage of households living below federal poverty level, meaning that as percentage of persons aged 25+ without a high school diploma increases, so does percentage of households living below federal poverty level. On the other hand, a negative correlation between the two variables would disprove my hypothesis. In my multivariable regression, I am controlling for the percentage of individuals aged 16+ who are unemployed.
+My research design is cross sectional, in that data regarding the socioeconomic indicators from each Chicago neighborhood was collected at a specific point in time.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
+<span></span>
+<span></span>
 <span><span class='va'>indicators</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Censusdata.csv"</span>, show_col_types <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span></span>
 <span></span>
+<span><span class='va'>relation</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='va'>indicators</span><span class='op'>)</span> </span>
 <span></span>
-<span><span class='va'>relation</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='va'>indicators</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>`COMMUNITY AREA NAME`</span>, <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span>, <span class='va'>`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`</span><span class='op'>)</span></span>
-<span>  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>relation</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"COMMUNITY AREA NAME"</span>, <span class='st'>"PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"</span>, <span class='st'>"PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
+<span><span class='va'>boxplot</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
+<span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span></span>
+<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span></span>
+<span>                    <span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span> <span class='op'>(</span>y <span class='op'>=</span> <span class='st'>"Percent of Households Below Poverty Level In Chicago"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>boxplot</span></span></code></pre>
 </div>
-<table>
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 36%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">COMMUNITY AREA NAME</th>
-<th style="text-align: right;">PERCENT HOUSEHOLDS BELOW POVERTY LEVEL</th>
-<th style="text-align: right;">PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Rogers Park</td>
-<td style="text-align: right;">23.6</td>
-<td style="text-align: right;">18.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">West Ridge</td>
-<td style="text-align: right;">17.2</td>
-<td style="text-align: right;">20.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Uptown</td>
-<td style="text-align: right;">24.0</td>
-<td style="text-align: right;">11.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lincoln Square</td>
-<td style="text-align: right;">10.9</td>
-<td style="text-align: right;">13.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">North Center</td>
-<td style="text-align: right;">7.5</td>
-<td style="text-align: right;">4.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lake View</td>
-<td style="text-align: right;">11.4</td>
-<td style="text-align: right;">2.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Lincoln Park</td>
-<td style="text-align: right;">12.3</td>
-<td style="text-align: right;">3.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Near North Side</td>
-<td style="text-align: right;">12.9</td>
-<td style="text-align: right;">2.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Edison Park</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">7.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Norwood Park</td>
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">11.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Jefferson Park</td>
-<td style="text-align: right;">8.6</td>
-<td style="text-align: right;">13.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Forest Glen</td>
-<td style="text-align: right;">7.5</td>
-<td style="text-align: right;">4.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">North Park</td>
-<td style="text-align: right;">13.2</td>
-<td style="text-align: right;">14.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Albany Park</td>
-<td style="text-align: right;">19.2</td>
-<td style="text-align: right;">32.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Portage Park</td>
-<td style="text-align: right;">11.6</td>
-<td style="text-align: right;">19.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Irving Park</td>
-<td style="text-align: right;">13.1</td>
-<td style="text-align: right;">22.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Dunning</td>
-<td style="text-align: right;">10.6</td>
-<td style="text-align: right;">16.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Montclaire</td>
-<td style="text-align: right;">15.3</td>
-<td style="text-align: right;">23.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Belmont Cragin</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">37.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Hermosa</td>
-<td style="text-align: right;">20.5</td>
-<td style="text-align: right;">41.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Avondale</td>
-<td style="text-align: right;">15.3</td>
-<td style="text-align: right;">24.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Logan Square</td>
-<td style="text-align: right;">16.8</td>
-<td style="text-align: right;">14.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Humboldt park</td>
-<td style="text-align: right;">33.9</td>
-<td style="text-align: right;">35.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">West Town</td>
-<td style="text-align: right;">14.7</td>
-<td style="text-align: right;">12.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Austin</td>
-<td style="text-align: right;">28.6</td>
-<td style="text-align: right;">24.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">West Garfield Park</td>
-<td style="text-align: right;">41.7</td>
-<td style="text-align: right;">24.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">East Garfield Park</td>
-<td style="text-align: right;">42.4</td>
-<td style="text-align: right;">21.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Near West Side</td>
-<td style="text-align: right;">20.6</td>
-<td style="text-align: right;">9.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">North Lawndale</td>
-<td style="text-align: right;">43.1</td>
-<td style="text-align: right;">27.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">South Lawndale</td>
-<td style="text-align: right;">30.7</td>
-<td style="text-align: right;">54.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Lower West Side</td>
-<td style="text-align: right;">25.8</td>
-<td style="text-align: right;">40.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Loop</td>
-<td style="text-align: right;">14.7</td>
-<td style="text-align: right;">3.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Near South Side</td>
-<td style="text-align: right;">13.8</td>
-<td style="text-align: right;">7.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Armour Square</td>
-<td style="text-align: right;">40.1</td>
-<td style="text-align: right;">34.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Douglas</td>
-<td style="text-align: right;">29.6</td>
-<td style="text-align: right;">14.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Oakland</td>
-<td style="text-align: right;">39.7</td>
-<td style="text-align: right;">18.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fuller Park</td>
-<td style="text-align: right;">51.2</td>
-<td style="text-align: right;">26.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Grand Boulevard</td>
-<td style="text-align: right;">29.3</td>
-<td style="text-align: right;">15.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Kenwood</td>
-<td style="text-align: right;">21.7</td>
-<td style="text-align: right;">11.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Washington Park</td>
-<td style="text-align: right;">42.1</td>
-<td style="text-align: right;">25.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Hyde Park</td>
-<td style="text-align: right;">18.4</td>
-<td style="text-align: right;">4.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Woodlawn</td>
-<td style="text-align: right;">30.7</td>
-<td style="text-align: right;">16.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">South Shore</td>
-<td style="text-align: right;">31.1</td>
-<td style="text-align: right;">14.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Chatham</td>
-<td style="text-align: right;">27.8</td>
-<td style="text-align: right;">14.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Avalon Park</td>
-<td style="text-align: right;">17.2</td>
-<td style="text-align: right;">10.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">South Chicago</td>
-<td style="text-align: right;">29.8</td>
-<td style="text-align: right;">26.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Burnside</td>
-<td style="text-align: right;">33.0</td>
-<td style="text-align: right;">19.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Calumet Heights</td>
-<td style="text-align: right;">11.5</td>
-<td style="text-align: right;">11.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Roseland</td>
-<td style="text-align: right;">19.8</td>
-<td style="text-align: right;">16.9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Pullman</td>
-<td style="text-align: right;">21.6</td>
-<td style="text-align: right;">13.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">South Deering</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">21.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">East Side</td>
-<td style="text-align: right;">19.2</td>
-<td style="text-align: right;">31.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">West Pullman</td>
-<td style="text-align: right;">25.9</td>
-<td style="text-align: right;">20.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Riverdale</td>
-<td style="text-align: right;">56.5</td>
-<td style="text-align: right;">27.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Hegewisch</td>
-<td style="text-align: right;">17.1</td>
-<td style="text-align: right;">19.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Garfield Ridge</td>
-<td style="text-align: right;">8.8</td>
-<td style="text-align: right;">19.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Archer Heights</td>
-<td style="text-align: right;">14.1</td>
-<td style="text-align: right;">35.9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Brighton Park</td>
-<td style="text-align: right;">23.6</td>
-<td style="text-align: right;">45.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">McKinley Park</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">32.9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Bridgeport</td>
-<td style="text-align: right;">18.9</td>
-<td style="text-align: right;">22.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">New City</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">41.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">West Elsdon</td>
-<td style="text-align: right;">15.6</td>
-<td style="text-align: right;">37.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Gage Park</td>
-<td style="text-align: right;">23.4</td>
-<td style="text-align: right;">51.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Clearing</td>
-<td style="text-align: right;">8.9</td>
-<td style="text-align: right;">18.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">West Lawn</td>
-<td style="text-align: right;">14.9</td>
-<td style="text-align: right;">33.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Chicago Lawn</td>
-<td style="text-align: right;">27.9</td>
-<td style="text-align: right;">31.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">West Englewood</td>
-<td style="text-align: right;">34.4</td>
-<td style="text-align: right;">26.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Englewood</td>
-<td style="text-align: right;">46.6</td>
-<td style="text-align: right;">28.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Greater Grand Crossing</td>
-<td style="text-align: right;">29.6</td>
-<td style="text-align: right;">16.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ashburn</td>
-<td style="text-align: right;">10.4</td>
-<td style="text-align: right;">17.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Auburn Gresham</td>
-<td style="text-align: right;">27.6</td>
-<td style="text-align: right;">18.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Beverly</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Washington Height</td>
-<td style="text-align: right;">16.9</td>
-<td style="text-align: right;">13.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Mount Greenwood</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">4.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Morgan Park</td>
-<td style="text-align: right;">13.2</td>
-<td style="text-align: right;">10.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">O’Hare</td>
-<td style="text-align: right;">15.4</td>
-<td style="text-align: right;">10.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Edgewater</td>
-<td style="text-align: right;">18.2</td>
-<td style="text-align: right;">9.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CHICAGO</td>
-<td style="text-align: right;">19.7</td>
-<td style="text-align: right;">19.5</td>
-</tr>
-</tbody>
-</table>
+<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>relation</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>degrees <span class='op'>=</span> <span class='va'>`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`</span>, </span>
-<span>         poverty <span class='op'>=</span> <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span><span class='op'>)</span></span>
+<span>         poverty <span class='op'>=</span> <span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span>,</span>
+<span>         Unemployment <span class='op'>=</span> <span class='va'>`PERCENT AGED 16+ UNEMPLOYED`</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
 <span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>degrees</span>, y <span class='op'>=</span> <span class='va'>poverty</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='va'>lm</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_alpha.html'>scale_alpha</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
 <span>  x <span class='op'>=</span> <span class='st'>"PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"</span> ,</span>
 <span>  y <span class='op'>=</span> <span class='st'>"PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"</span></span>
 <span>  <span class='op'>)</span> </span>
-<span></span>
+<span>  </span>
 <span><span class='va'>plot</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<p>There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below the federal poverty level.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>unemp</span> <span class='op'>&lt;-</span> <span class='va'>relation</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>unemprate <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>Unemployment</span> <span class='op'>&gt;=</span><span class='fl'>10</span> <span class='op'>~</span> <span class='st'>"High Unemployment"</span> ,</span>
+<span>  <span class='va'>Unemployment</span> <span class='op'>&lt;</span> <span class='fl'>10</span> <span class='op'>~</span> <span class='st'>"Normal Unemployment"</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span></span>
+<span></span>
+<span><span class='va'>une</span> <span class='op'>&lt;-</span> <span class='va'>unemp</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span></span>
+<span>    Unemploy <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>Unemployment</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"High Unemployment"</span> , <span class='st'>"Normal Unemployment"</span><span class='op'>)</span> </span>
+<span>  <span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  </span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>relation</span>, mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>degrees</span>, y <span class='op'>=</span> <span class='va'>poverty</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>Unemployment</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='va'>lm</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_alpha.html'>scale_alpha</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>  x <span class='op'>=</span> <span class='st'>"Percent Aged 25+ Without High School Diploma"</span> ,</span>
+<span>  y <span class='op'>=</span> <span class='st'>"Percent Of Households Below Poverty Level"</span></span>
+<span>  <span class='op'>)</span> </span>
+<span>  </span>
+<span><span class='va'>une</span> </span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`PERCENT HOUSEHOLDS BELOW POVERTY`</span> <span class='op'>~</span> <span class='va'>`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`</span> <span class='op'>+</span> <span class='va'>`PERCENT AGED 16+ UNEMPLOYED`</span>, data <span class='op'>=</span> <span class='va'>indicators</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>lm</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = `PERCENT HOUSEHOLDS BELOW POVERTY` ~ `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA` + 
+    `PERCENT AGED 16+ UNEMPLOYED`, data = indicators)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.0725  -5.5774  -0.2457   4.7287  15.6734 
+
+Coefficients:
+                                               Estimate Std. Error
+(Intercept)                                      1.1476     1.9328
+`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`   0.1561     0.0700
+`PERCENT AGED 16+ UNEMPLOYED`                    1.1354     0.1096
+                                               t value Pr(&gt;|t|)    
+(Intercept)                                      0.594   0.5545    
+`PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`   2.231   0.0287 *  
+`PERCENT AGED 16+ UNEMPLOYED`                   10.355 4.13e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 6.744 on 75 degrees of freedom
+Multiple R-squared:  0.6625,    Adjusted R-squared:  0.6535 
+F-statistic: 73.62 on 2 and 75 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>lm</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                                         <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+1.148
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 1.933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.554
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA
+</td>
+<td style="text-align:center;">
+0.156
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.070
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PERCENT AGED 16+ UNEMPLOYED
+</td>
+<td style="text-align:center;">
+1.135
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+78
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.663
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.654
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When holding the percentage of individuals aged 16+ who are unemployed constant , the percentage of households below poverty level goes up by 0.156 on average when percentage of individuals aged 25+ without a high school diploma increases.
+The coefficient of the percentage aged 16+ unemployed indicates that the effect of having 100% increase in the percentage of individuals aged 16+ who are unemployed would be a 1.135 increase in the percentage of households below poverty level on average when holding percentage of individuals aged 25+ without a high school diploma constant.
+There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the percentage of households living below the federal poverty level. However, there is a STRONGER positive relationship between the percentage of households living below the federal poverty level and the percentage of individuals aged 16+ who are unemployed.</p>
+<p>Although my analysis finds a positive correlation between the percentage of persons over the age of 25 without a high school diploma and the percentage of households living below the federal poverty level, and an even stronger positive correlation between the percentage of individuals aged 16+ who are unemployed and the percentage of households living below the federal poverty level, there are a few limitations to this analysis. Most notably, it does not include a demographic breakdown of the populations living within these communities. For example, it would perhaps be helpful to know how much of each individual community’s population is made up of immigrants, in order to better understand why a particular community might have an especially high number of individuals without high school diplomas. Overall, it would simply be more helpful to understand the demographic makeup of each community because that would allow for a better understanding of what this data actually means for different marginalized communities, rather than a totally data and number-based understanding of a community’s socioeconomic standing.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
