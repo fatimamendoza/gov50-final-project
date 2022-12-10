@@ -11,7 +11,7 @@ output:
 
 ## Project thoughts
 
-For my final project, I am interested in exploring data regarding high school education and poverty rates in the city of Chicago. More specifically, I'd like to see the relationship between percentage of persons over the age of 25 without a high school diploma and the percent of households living below federal poverty level.
+For my final project, I am interested in exploring data regarding high school education and poverty rates in the city of Chicago. More specifically, I'd like to see the relationship between percentage of persons over the age of 25 without a high school diploma and the percentage of households living below federal poverty level.
 
 
 
@@ -19,34 +19,86 @@ For my final project, I am interested in exploring data regarding high school ed
 
 https://catalog.data.gov/dataset/census-data-selected-socioeconomic-indicators-in-chicago-2008-2012  
 The data set I plan on using is "Census Data - Selected socioeconomic indicators in Chicago, 2008 – 2012" from data.gov
-	What is the impact of the percentage of persons over the age of 25 without a high school diploma on the percent of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people over the age of 25 without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people over 25 years of age without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons over the age of 25 without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals over the age of 25 do not have a high school diploma. The outcome variable of interest is the percent of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons over the age of 25 without a high school diploma and percent of households living below federal poverty level, meaning that as percentage of persons over the age of 25 without a high school diploma increases, so does percent of households living below federal poverty level. On the other hand, a negative correlation between the two variables would disprove my hypothesis.
-	
+	What is the impact of the percentage of persons ages 25+ without a high school diploma on the percentage of households living below federal poverty level? I hypothesize that there will be a higher percentage of households living below federal poverty level in community areas with higher percentages of people aged 25+ without a high school diploma. I expect there to be a cycle of educational disparities that result in economic disparity, and vice versa. In other words, I expect that communities with more people aged 25+ without high school diplomas will have higher poverty rates because a lack of a high school diploma likely makes it more difficult to obtain high paying jobs. I expect that a lack of higher paying jobs results in more members of these communities living below the federal poverty line, which allows the cycle of educational disparities to continue. The explanatory variable in this study will be the percentage of persons aged 25+ without a high school diploma, which is measured on a community-to-community basis, indicating how many individuals aged 25+ do not have a high school diploma. The outcome variable of interest is the percentage of households living below federal poverty level, which is also measured on a community-to-community basis, indicating how many households in a neighborhood live below the federal poverty level. An observed pattern that would support my hypothesis on this data is a positive relationship between percentage of persons aged 25+ without a high school diploma and percentage of households living below federal poverty level, meaning that as percentage of persons aged 25+ without a high school diploma increases, so does percentage of households living below federal poverty level. On the other hand, a negative correlation between the two variables would disprove my hypothesis. In my multivariable regression, I am controlling for the percentage of individuals aged 16+ who are unemployed. 
+	My research design is cross sectional, in that data regarding the socioeconomic indicators from each Chicago neighborhood was collected at a specific point in time.   
 
 ```{r}
 library(tidyverse)
+library(broom)
+
+
 indicators <- read_csv("Censusdata.csv", show_col_types = F)
 
+relation <- as_tibble(indicators) 
 
-relation <- as_tibble(indicators) |>
-  select(`COMMUNITY AREA NAME`, `PERCENT HOUSEHOLDS BELOW POVERTY`, `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`)
-  knitr::kable(relation, col.names = c("COMMUNITY AREA NAME", "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL", "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA"), digits = 3)
+boxplot <- relation |>
 
+ggplot(
+       mapping = aes(y = `PERCENT HOUSEHOLDS BELOW POVERTY`
+                    )) +
+  geom_boxplot()+
+  labs (y = "Percent of Households Below Poverty Level In Chicago")
+
+boxplot
+```
+
+```{r}
 relation <- relation |>
   mutate(degrees = `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA`, 
-         poverty = `PERCENT HOUSEHOLDS BELOW POVERTY`)
+         poverty = `PERCENT HOUSEHOLDS BELOW POVERTY`,
+         Unemployment = `PERCENT AGED 16+ UNEMPLOYED`)
 
 plot <- relation |>
 ggplot(mapping = aes(x = degrees, y = poverty)) +
   geom_point() +
-  geom_smooth() +
+  geom_smooth(method = lm) +
   scale_alpha() +
   labs(
   x = "PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA" ,
   y = "PERCENT HOUSEHOLDS BELOW POVERTY LEVEL"
   ) 
-
+  
 plot
 ```
 
-	
-There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the the percent of households living below the federal poverty level.
+```{r}
+unemp <- relation |>
+  mutate(unemprate = case_when(
+  Unemployment >=10 ~ "High Unemployment" ,
+  Unemployment < 10 ~ "Normal Unemployment")) 
+
+
+une <- unemp |>
+  mutate(
+    Unemploy = if_else(Unemployment == 1, "High Unemployment" , "Normal Unemployment") 
+  )|>
+  
+ggplot(data = relation, mapping = aes(x = degrees, y = poverty)) +
+  geom_point(aes(color = Unemployment)) +
+  geom_smooth(method = lm) +
+  scale_alpha() +
+  labs(
+  x = "Percent Aged 25+ Without High School Diploma" ,
+  y = "Percent Of Households Below Poverty Level"
+  ) 
+  
+une 
+
+```
+```{r}
+lm <- lm(`PERCENT HOUSEHOLDS BELOW POVERTY` ~ `PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA` + `PERCENT AGED 16+ UNEMPLOYED`, data = indicators)
+summary(lm)
+
+modelsummary::modelsummary(lm,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+```
+
+  When holding the percentage of individuals aged 16+ who are unemployed constant , the percentage of households below poverty level goes up by 0.156 on average when percentage of individuals aged 25+ without a high school diploma increases. 
+  The coefficient of the percentage aged 16+ unemployed indicates that the effect of having 100% increase in the percentage of individuals aged 16+ who are unemployed would be a 1.135 increase in the percentage of households below poverty level  on average when holding percentage of individuals aged 25+ without a high school diploma constant. 
+  There is a positive relationship between the percentage of persons over the age of 25 without a high school diploma and the percentage of households living below the federal poverty level. However, there is  a STRONGER positive relationship between the percentage of households living below the federal poverty level and the percentage of individuals aged 16+ who are unemployed. 
+
+
+  Although my analysis finds a positive correlation between the percentage of persons over the age of 25 without a high school diploma and the percentage of households living below the federal poverty level, and an even stronger positive correlation between the percentage of individuals aged 16+ who are unemployed and the percentage of households living below the federal poverty level, there are a few limitations to this analysis. Most notably, it does not include a demographic breakdown of the populations living within these communities. For example, it would perhaps be helpful to know how much of each individual community’s population is made up of immigrants, in order to better understand why a particular community might have an especially high number of individuals without high school diplomas. Overall, it would simply be more helpful to understand the demographic makeup of each community because that would allow for a better understanding of what this data actually means for different marginalized communities, rather than a totally data and number-based understanding of a community's socioeconomic standing. 
+
